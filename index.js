@@ -1,14 +1,10 @@
-const http = require('http')
-const fs = require('fs')
-
-const server = http.createServer((req,res)=>{
-    res.writeHead(200,{
-        'content-type':'text/html'
-    })
-    const file = fs.readFileSync('./index.html');
-    res.end(file);
+const express =require('express');
+const path=require('path');
+const server = express();
+server.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html'))
 })
-
-server.listen(3000,()=>{
-    console.log("Serving on port :3000");
-})
+server.use('/',
+    express.static(path.join(__dirname,'public'))
+)
+server.listen(3000);
