@@ -1,4 +1,4 @@
 function navigate(prop){
-    location.href=prop;
-    return false;
+    window.location=prop;
+
 }
