@@ -5,7 +5,24 @@
         "use":"@vercel/node"
     }],
     "routes":[{
-        "src":"./(.*)",
-        "dest":"/public"
-    }]
+        "src":"./public/index.html",
+        "dest":"/"
+    },
+    {
+        "src":"./public/controls.html",
+        "dest":"/controls"
+    },
+    {
+        "src":"./public/immersive.html",
+        "dest":"/immersive"
+    },
+    {
+        "src":"./public/pkgs/router.js",
+        "dest":"/"
+    },
+    {
+        "src":"./public/global.css",
+        "dest":"/"
+    }
+]
 }
