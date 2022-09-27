@@ -1,0 +1,39 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+@font-face{
+    font-family: Target;
+    src:url('https://fonts.cdnfonts.com/s/71951/tarrget3d.woff')
+}
+@font-face{
+    font-family:TargetNormal;
+    src:url('https://fonts.cdnfonts.com/s/71951/tarrget.woff');
+}
+.main{
+    margin-top: 45px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+h1{
+    font-family: Target;
+    color: blueviolet;
+}
+.button{
+    
+    height: 45px;
+    border-radius: 15px;
+    background-color:aquamarine;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    outline: none;
+    font-family:TargetNormal ;
+}
+.button:hover{
+    background-color: beige;
+}
