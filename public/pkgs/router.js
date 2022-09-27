@@ -1,4 +1,4 @@
 function navigate(prop){
-    window.location=prop;
+    location.assign=`https://dhyuthimetaverse.vercel.app${prop}`;
 
 }
