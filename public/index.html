@@ -8,18 +8,26 @@
     <link rel="stylesheet" href="global.css">
     <script src="pkgs/router.js"></script>
     <style>
-        .mainBackground{
+        body{
             background-image: url('./assets/dhrobo.png');
-            height: 90vh;
+            
             background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
         }
     </style>
 </head>
 <body>
-    <div class="main mainBackground">
+    <div class="main">
         <h1>Dhyuthi 4.0</h1>
-        <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
-        <button class="button" onclick="navigate('/controls')">immersive mode</button>
+        <div class="mainBackground">
+            <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
+            <button class="button" onclick="navigate('/controls')">immersive mode</button>
+        </div>
+        
     </div>
     
 </body>
