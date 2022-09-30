@@ -26,15 +26,21 @@ h1{
 .button{
     
     height: 45px;
-    border-radius: 15px;
-    background-color:aquamarine;
+    border-radius: 22px;
+    background-color:black;
+    color:white;
     text-align: center;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     outline: none;
     font-family:TargetNormal ;
+    box-shadow:  0px 2.75px 2.75px rgba(0, 0, 0, 0.25), 0px 0px 159.071px #761EDF, 0px 0px 90.8978px #761EDF, 0px 0px 53.0237px #761EDF, 0px 0px 26.5119px #761EDF, 0px 0px 7.57482px #761EDF;
+    backdrop-filter: blur(7.90624px);
+    letter-spacing: 3px;
+    margin-top: 16px;
+
 }
 .button:hover{
-    background-color: beige;
+    background-color: black;
 }

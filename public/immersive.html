@@ -10,10 +10,11 @@ Metaverse by sct,trivandrum
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhyuthi SCT metaverse</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="./pkgs/mobilecontroller.js" ></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+    <script src="./pkgs/twowaymotion.js"></script>
     <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/tilt-turn/tilt-turn.js" ></script>
     <script src="./pkgs/materialtheme.js"></script>
     
@@ -27,6 +28,23 @@ Metaverse by sct,trivandrum
       .threedimage{
         border-radius: 15px;
       }
+      .controllers{
+        position:absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction:column;
+      }
+      .eachControllers{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .centerController{
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom:5px;
+      }
     </style>
 </head>
 <body>
@@ -36,17 +54,22 @@ Metaverse by sct,trivandrum
           <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
           <img id="images" src="./assets/path13146.png"   crossorigin="anonymous">
           <img id="dhyuthirobo" src="./assets/dhrobo.png" crossorigin="anonymous"> 
+          <audio id="lofi" src="./assets/backgroundlofi.wav"></audio>
           <a-asset-item  id="threeFont" src="./assets/custom.jsonasset"></a-asset-item>
       
         </a-assets>
         <a-entity  environment="preset:japan;dressing:torii;ligthing:distant;skyType:atmosphere;ground:spikes;"></a-entity>
-        
         <a-entity
         
         text="value:Dhyuthi 4.0;shader:msdf;font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/orbitron/Orbitron-Bold.json; bhevelEnabled:true;bevelSize:0.03;bevelThickness:0.03;"
         position="13 1.2 -12.62839"
         scale="34.5 34.5 24.5"
       ></a-entity>
+      <a-entity position="13 1.2 -12.62839">
+        <a-rounded color="white">
+          <a-button height="5" width="5" name="lofi" position="13 1.2 -12.62839" value="music" ></a-button>
+        </a-rounded>
+      </a-entity>
       <a-entity text="value: Move around to navigate" position="1 0.2 -12.62839" scale="7.5 7.5 15.5"></a-entity>
       
       <a-entity position="-6.54753 1.35536 2.762"  rotation="0 100 0">
@@ -72,7 +95,7 @@ Metaverse by sct,trivandrum
       </a-entity>
       <!--Camera cursor-->  
 
-      <a-entity id="cam" camera="" wasm-controls mouse-controls twoway-motion="nonMobileLoad: true; chatty: false;speed:7;threshold:-20;" position="0 1.6 0" wasd-controls="" look-controls="" rotation="" scale="" visible="">
+      <a-entity id="cam" camera="" wasd-controls mouse-controls mobilecontroller twoway-motion="nonMobileLoad: true; chatty: false;speed:7;threshold:-20;" position="0 1.6 0" wasd-controls="" look-controls="" rotation="" scale="" visible="" >
             <!--<a-cursor scale="2 2 2" color="white" opacity="0.3" position="" rotation="" visible="" material="" raycaster="objects:[gui-interactable]" cursor="fuse" geometry="ring">
             </a-cursor>--->
             <a-gui-cursor id="cursor" raycaster="objects:[gui-interactable]"  fuse="true" fuse-timeout="1000" design="ring" 
@@ -93,7 +116,20 @@ Metaverse by sct,trivandrum
         material="shader: standard; metalness: 0.8;"
         ></a-troika-text>
         <a-sky color="#ECECEC"></a-sky>
+        
       </a-scene>
+      <div class="controllers" aframe-injected >
+        <div class="eachControllers">
+          <button id="up"  aframe-injected >u</button>
+        </div>
+        <div class="eachControllers">
+          <button id="left" class="centerController" aframe-injected >l</button>
+          <button id="right" class="centerController" aframe-injected >r</button>
+        </div>
+        <div class="eachControllers">
+          <button id="down" aframe-injected >d</button>
+        </div>
+      </div>
       <button>
         Ieee
       </button>
