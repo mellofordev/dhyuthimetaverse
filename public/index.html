@@ -9,22 +9,71 @@
     <script src="pkgs/router.js"></script>
     <style>
         body{
-            background-image: url('./assets/dhrobo.png');
-            
+            background-image: url('./assets/grouped.png');
+            background-size: 80%;
+            background-position: center;
             background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            
 
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .headerImage{
+            height: 150px;
+            width: 150px;
+        }
+        .firstViewer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        @media (max-width:600px) {
+            body{
+                background-size: 100%;
+                background-position-y: -2px;
+            }
+            .desktopheaderTitle{
+                display: none;
+            }
+            .headerImage{
+                height: 150px;
+                width: 150px;
+
+            }
+            .firstViewer{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="background"></div>
+    <header class="header">
+        
+        <h1 class="desktopheaderTitle">Dhyuthi 4.0</h1>
+        <nav></nav>
+    </header>
     <div class="main">
-        <h1>Dhyuthi 4.0</h1>
-        <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
-        <button class="button" onclick="navigate('/controls')">immersive mode</button>
+         <div class="firstViewer">
+            <img src="./assets/path13146.png" class="headerImage">
+            <div class="content">
+                <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
+                <button class="button" onclick="navigate('/controls')">immersive mode</button>
+            </div>
+         </div>
     </div>
     
 </body>
