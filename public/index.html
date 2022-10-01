@@ -40,6 +40,17 @@
             justify-content: center;
             
         }
+        @keyframes smoothspot{
+            from{
+                transfrom:scale(0.8);
+                width: 200px;
+            }
+            to{
+                transform:scale(1);
+                width: 50vw;
+            }
+        }
+       
         .topspot{
            
             display: flex;
@@ -51,11 +62,19 @@
             align-items: center;
             height: 70px;
             width: 200px;
+            transform: scale(0.8);
+            
 
         }
         .topspot:hover{
             height: 50px;
             width: 50vw; 
+            transform: scale(1);
+            animation-name: smoothspot;
+            animation-duration: 2s;
+            animation-delay: 0ms;
+
+
         }
         .topview{
             background-image: url('./assets/grouped.png');
