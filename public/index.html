@@ -42,15 +42,26 @@
         }
         @keyframes smoothspot{
             from{
-                transfrom:scale(0.8);
+                transfrom:translateZ(0px) scale(0.95);
+                height: 70px;
                 width: 200px;
             }
             to{
-                transform:scale(1);
+                transform: translateZ(-10px) scale(1);
+                height: 50px;
                 width: 50vw;
             }
         }
-       
+        @keyframes smoothspotback{
+            from{
+                transfrom:scale(1.23);
+                width: 50vw;
+            }
+            to{
+                transform: scale(0.95);
+                width: 200px;
+            }
+        }
         .topspot{
            
             display: flex;
@@ -62,16 +73,17 @@
             align-items: center;
             height: 70px;
             width: 200px;
-            transform: scale(0.8);
-            
+            animation-name: smoothspotback;
+            animation-duration: 1s;
+            animation-delay: 0ms;
 
         }
-        .topspot:hover{
+        .topspot:hover,.topspot:active,.topspot:focus{
             height: 50px;
             width: 50vw; 
-            transform: scale(1);
+            
             animation-name: smoothspot;
-            animation-duration: 2s;
+            animation-duration: 3s;
             animation-delay: 0ms;
 
 
@@ -119,13 +131,43 @@
                 background-position-y:-3px;
                 background-size:100vw ;
             }
+            @keyframes smoothspot-mobile{
+                from{
+                    transfrom:scale(0.95);
+                    
+                    width: 100px;
+                }
+                to{
+                    transform:  scale(1);
+                    height: 50px;
+                    width: 50vw;
+                }
+            }
+            @keyframes smoothspotback-mobile{
+                from{
+                    transfrom:scale(1.23);
+                    width: 120px;
+                }
+                to{
+                    transform: scale(1);
+                    width: 118px;
+                }
+            }
             .topspot{
                 height: 30px;
                 width: 120px;
-                transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-                animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-                animation-delay: 2s;
-                margin-bottom:55px ;
+                margin-bottom:55px;
+                animation-name: smoothspotback-mobile;
+                animation-duration: 5s;
+                animation-delay: 0ms;
+                
+            }
+            .topspot:hover,.topspot:active,.topspot:focus{
+
+                animation-name:smoothspot-mobile;
+                animation-duration: 2s;
+                animation-delay: 0ms;
+
             }
             
             .toTop{
