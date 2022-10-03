@@ -9,21 +9,23 @@
     <script src="pkgs/router.js"></script>
     <style>
         body{
-            background-image: url('./assets/grouped.png');
-            background-size: 80%;
-            background-position: center;
-            background-repeat: no-repeat;
+            
             display: flex;
             flex-direction: column;
             
 
         }
         .header{
+           
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            
         }
         .headerImage{
+            margin-top: 40px;
             height: 150px;
             width: 150px;
         }
@@ -38,6 +40,74 @@
             justify-content: center;
             
         }
+        @keyframes smoothspot{
+            from{
+                transfrom:translateZ(0px) scale(0.95);
+                height: 70px;
+                width: 200px;
+            }
+            to{
+                transform: translateZ(-10px) scale(1);
+                height: 50px;
+                width: 50vw;
+            }
+        }
+        @keyframes smoothspotback{
+            from{
+                transfrom:scale(1.23);
+                width: 50vw;
+            }
+            to{
+                transform: scale(0.95);
+                width: 200px;
+            }
+        }
+        .topspot{
+           
+            display: flex;
+            flex-direction: row;
+            border-radius: 43.6131px;
+            box-shadow:  0px 0px 971.392px #26359B, 0px 0px 555.081px #26359B, 0px 0px 323.797px #26359B, 0px 0px 161.899px #26359B, 0px 0px 46.2568px #26359B, 0px 0px 23.1284px #26359B;
+            border:  2px solid #0050B7;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            width: 200px;
+            animation-name: smoothspotback;
+            animation-duration: 1s;
+            animation-delay: 0ms;
+
+        }
+        .topspot:hover,.topspot:active,.topspot:focus{
+            height: 50px;
+            width: 50vw; 
+            
+            animation-name: smoothspot;
+            animation-duration: 3s;
+            animation-delay: 0ms;
+
+
+        }
+        .topview{
+            background-image: url('./assets/grouped.png');
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .desktopheaderTitle{
+            margin-right: 145px;
+        }
+        .navigationButtons{
+            margin: 5px;
+        }
+        .desktopMargins{
+            width: 40vw;
+            margin:45px;
+        }
         @media (max-width:600px) {
             body{
                 background-size: 100%;
@@ -47,6 +117,7 @@
                 display: none;
             }
             .headerImage{
+                margin-top:0px ;
                 height: 150px;
                 width: 150px;
 
@@ -56,20 +127,77 @@
                 justify-content: center;
                 align-items: center;
             }
+            .topview{
+                background-position-y:-3px;
+                background-size:100vw ;
+            }
+            @keyframes smoothspot-mobile{
+                from{
+                    transfrom:scale(0.95);
+                    
+                    width: 100px;
+                }
+                to{
+                    transform:  scale(1);
+                    height: 50px;
+                    width: 50vw;
+                }
+            }
+            @keyframes smoothspotback-mobile{
+                from{
+                    transfrom:scale(1.23);
+                    width: 120px;
+                }
+                to{
+                    transform: scale(1);
+                    width: 118px;
+                }
+            }
+            .topspot{
+                height: 30px;
+                width: 120px;
+                margin-bottom:55px;
+                animation-name: smoothspotback-mobile;
+                animation-duration: 5s;
+                animation-delay: 0ms;
+                
+            }
+            .topspot:hover,.topspot:active,.topspot:focus{
+
+                animation-name:smoothspot-mobile;
+                animation-duration: 2s;
+                animation-delay: 0ms;
+
+            }
+            
+            .toTop{
+                margin-top: -40px;
+            }  
+            .desktopMargins{
+                width: auto;
+                margin: 0px;
+            } 
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <header class="header">
+    <div class="topview">
         
-        <h1 class="desktopheaderTitle">Dhyuthi 4.0</h1>
-        <nav></nav>
-    </header>
-    <div class="main">
+        <header class="header">
+            <nav class="topspot">
+                <a class="navigationButtons"><img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png"></a>
+                <a class="navigationButtons"><img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png"></a>
+                <a class="navigationButtons"><img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png"></a>
+            </nav>
+           
+            
+        </header>
+        
+    </div>
+    <div class="main toTop">
          <div class="firstViewer">
             <img src="./assets/path13146.png" class="headerImage">
-            <div class="content">
+            <div class="content desktopMargins">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
                 <button class="button" onclick="navigate('/controls')">immersive mode</button>
             </div>
