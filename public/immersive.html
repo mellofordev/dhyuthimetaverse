@@ -29,6 +29,11 @@ Metaverse by sct,trivandrum
         border-radius: 15px;
       }
       .controllers{
+        display: none;
+
+      }
+      @media(max-width:600px){
+        .controllers{
         position:absolute;
         bottom: 20px;
         right: 20px;
@@ -45,6 +50,15 @@ Metaverse by sct,trivandrum
         margin-top: 5px;
         margin-bottom:5px;
       }
+      .controlButton{
+        border-radius: 55px;
+        width: 33px;
+        height: 33px;
+        background-color: transparent;
+        color: white;
+
+      }
+      }
     </style>
 </head>
 <body>
@@ -56,7 +70,7 @@ Metaverse by sct,trivandrum
           <img id="dhyuthirobo" src="./assets/dhrobo.png" crossorigin="anonymous"> 
           <audio id="lofi" src="./assets/backgroundlofi.wav"></audio>
           <a-asset-item  id="threeFont" src="./assets/custom.jsonasset"></a-asset-item>
-      
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </a-assets>
         <a-entity  environment="preset:japan;dressing:torii;ligthing:distant;skyType:atmosphere;ground:spikes;"></a-entity>
         <a-entity
@@ -120,14 +134,14 @@ Metaverse by sct,trivandrum
       </a-scene>
       <div class="controllers" aframe-injected >
         <div class="eachControllers">
-          <button id="up"  aframe-injected >u</button>
+          <button id="up" class="controlButton"  aframe-injected ><i class="fa fa-angle-up" style="font-size: 25px;"></i></button>
         </div>
         <div class="eachControllers">
-          <button id="left" class="centerController" aframe-injected >l</button>
-          <button id="right" class="centerController" aframe-injected >r</button>
+          <button id="left" class="centerController controlButton" aframe-injected ><i class="fa fa-angle-left" style="font-size: 25px;"></i></button>
+          <button id="right" class="centerController controlButton" aframe-injected ><i class="fa fa-angle-right" style="font-size: 25px;"></i></button>
         </div>
         <div class="eachControllers">
-          <button id="down" aframe-injected >d</button>
+          <button id="down" class="controlButton" aframe-injected ><i class="fa fa-angle-down" style="font-size: 25px;"></i></button>
         </div>
       </div>
       <button>

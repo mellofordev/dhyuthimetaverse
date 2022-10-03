@@ -1,3 +1,5 @@
+//add friction to make smooth movements ;
+
 AFRAME.registerComponent('mobilecontroller',{
     schema:{
         velocity:{type:"number",default:20},
@@ -8,28 +10,43 @@ AFRAME.registerComponent('mobilecontroller',{
         
         var camera = document.querySelector("[camera]").components["mobilecontroller"];
         camera.componentName="mobilecontroller";
-        var canvas =document.querySelectorAll('.a-canvas');
+        var get_camera =document.getElementById("cam");
         var upkey =document.getElementById("up");
         var downkey=document.getElementById("down");
         var leftkey =document.getElementById("left");
         var rightkey=document.getElementById("right");
-        console.log(camera.data);
+        upkey.addEventListener('touchstart',()=>{
+         var position_ =get_camera.getAttribute("position");
+         
+         position_.z-=0.154;
 
+         get_camera.setAttribute("position",position_);
+         console.log(get_camera.getAttribute("position"))
+        })
+        downkey.addEventListener('touchstart',()=>{
+            var position_ =get_camera.getAttribute("position");
+            
+            position_.z+=0.154;
+   
+            get_camera.setAttribute("position",position_);
+            console.log(get_camera.getAttribute("position"))
+           })
+        leftkey.addEventListener('touchstart',()=>{
+            var position_ =get_camera.getAttribute("position");
+            
+            position_.x-=0.154;
+   
+            get_camera.setAttribute("position",position_);
+            console.log(get_camera.getAttribute("position"))
+        })
+        rightkey.addEventListener('touchstart',()=>{
+            var position_ =get_camera.getAttribute("position");
+            
+            position_.x+=0.154;
+   
+            get_camera.setAttribute("position",position_);
+            console.log(get_camera.getAttribute("position"))
+        })
     },
-    thick:function(){
 
-    },
-    update:function(){
-        if(this.el.components["mobilecontroller"]!==undefined){
-            this.el.components["wasd-controls"].data.acceleration=this.data.velocity;
-
-        }
-    },
-    play:function(){},
-    pause:function(){},
-    remove:function(){
-        if(this.el.components["wasd-controls"]==undefined){
-            this.el.removeAttribute("wasd-controls");
-        }
-    }
 });
