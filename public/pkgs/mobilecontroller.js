@@ -7,9 +7,6 @@ AFRAME.registerComponent('mobilecontroller',{
 
     },
     init:function(){
-        
-        var camera = document.querySelector("[camera]").components["mobilecontroller"];
-        camera.componentName="mobilecontroller";
         var get_camera =document.getElementById("cam");
         var upkey =document.getElementById("up");
         var downkey=document.getElementById("down");
