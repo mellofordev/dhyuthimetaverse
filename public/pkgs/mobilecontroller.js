@@ -12,15 +12,17 @@ AFRAME.registerComponent('mobilecontroller',{
         var downkey=document.getElementById("down");
         var leftkey =document.getElementById("left");
         var rightkey=document.getElementById("right");
+    
         upkey.addEventListener('touchstart',()=>{
          var position_ =get_camera.getAttribute("position");
          
-         position_.z-=0.154;
+         position_.z-=0.154; //change it to some another value for smooth movement may use math.sin 
 
          get_camera.setAttribute("position",position_);
          console.log(get_camera.getAttribute("position"))
         })
         downkey.addEventListener('touchstart',()=>{
+            
             var position_ =get_camera.getAttribute("position");
             
             position_.z+=0.154;
@@ -30,9 +32,9 @@ AFRAME.registerComponent('mobilecontroller',{
            })
         leftkey.addEventListener('touchstart',()=>{
             var position_ =get_camera.getAttribute("position");
-            
+            var rotation_ =get_camera.getAttribute("rotation");
+
             position_.x-=0.154;
-   
             get_camera.setAttribute("position",position_);
             console.log(get_camera.getAttribute("position"))
         })

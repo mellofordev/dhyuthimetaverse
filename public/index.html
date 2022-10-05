@@ -24,7 +24,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            height: 150px;
+            height: 250px;
             
         }
         .headerImage{
@@ -69,32 +69,32 @@
            
             display: flex;
             flex-direction: row;
-            border-radius: 43.6131px;
+            border-radius: 59.12px;
             box-shadow:  0px 0px 971.392px #26359B, 0px 0px 555.081px #26359B, 0px 0px 323.797px #26359B, 0px 0px 161.899px #26359B, 0px 0px 46.2568px #26359B, 0px 0px 23.1284px #26359B;
             border:  2px solid #0050B7;
             justify-content: center;
             align-items: center;
             height: 70px;
             width: 500px;
-            animation-name: smoothspotback;
+            /*animation-name: smoothspotback;
             animation-duration: 1s;
-            animation-delay: 0ms;
+            animation-delay: 0ms;*/
             background-color: black;
 
         }
         .topspot:hover,.topspot:active,.topspot:focus{
-            height: 50px;
+            height: 70px;
             width: 50vw; 
             
-            animation-name: smoothspot;
+            /*animation-name: smoothspot;
             animation-duration: 3s;
-            animation-delay: 0ms;
+            animation-delay: 0ms;*/
 
 
         }
         .topview{
             background-image: url('./assets/grouped.png');
-            background-size: 80% 150%;
+            background-size: 80% auto;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
@@ -157,6 +157,26 @@
             transform: rotate(-90deg);
 
             }
+        /*.sound-island{
+                display: flex;
+                justify-content: space-around;
+                align-self: start;
+                background: black;
+                border: 2px solid #8F1BD6;
+                box-shadow: 0px 0px 272.16px #8246AA, 0px 0px 155.52px #8246AA, 0px 0px 90.72px #8246AA, 0px 0px 45.36px #8246AA, 0px 0px 12.96px #8246AA, 0px 0px 6.48px #8246AA;
+                border-radius: 50%;
+                height: 70px;
+                width: 70px;
+                cursor: pointer;
+                margin-top:5px;
+                margin-right: 15px;
+               
+        }*/    
+        .comingsoontitle{
+            font-size: 119px;
+            font-weight: 900;
+            font-family: TargetNormal;
+        }
         @media (max-width:600px) {
             body{
                 background-size: 100%;
@@ -175,10 +195,13 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                margin-top: -100px;
             }
             .topview{
                 background-position-y:-3px;
-                background-size:100vw 80%;
+                background-size:100vw 85%;
+                margin: 0px;
+                padding: 0px;
             }
             @keyframes smoothspot-mobile{
                 from{
@@ -206,28 +229,33 @@
                 height: 50px;
                 width: 300px;
                 margin-bottom:55px;
-                animation-name: smoothspotback-mobile;
+               /* animation-name: smoothspotback-mobile;
                 animation-duration: 5s;
-                animation-delay: 0ms;
+                animation-delay: 0ms;*/
+                border-radius: 43.61px;
                 
             }
             .topspot:hover,.topspot:active,.topspot:focus{
 
-                animation-name:smoothspot-mobile;
+               /* animation-name:smoothspot-mobile;
                 animation-duration: 2s;
-                animation-delay: 0ms;
+                animation-delay: 0ms;*/
 
             }
             
             .toTop{
                 margin-top: -40px;
             } 
-            
+            .comingsoontitle{
+            font-size: 75px;
+            font-weight: 900;
+            font-family: TargetNormal;
+        }
             .timer{
                 justify-content: space-between;
                 align-items: flex-start;
                 width: 25px;
-                margin-left: -70px;
+                margin-left: -105px;
                 
             } 
             .desktopMargins{
@@ -250,29 +278,44 @@
             
         }
     </style>
-    <style>
-        ::-webkit-scrollbar {
-        width: 15px;
-        }
-        ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey; 
-       
-        }
-        ::-webkit-scrollbar-thumb {
-        background:#0050B7; 
-        border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-        background:#26359B; 
-        }
-    </style>
 </head>
 <body>
     <div class="topview">
         
         <header class="header">
+            <div class="dynamic-island">
+                <div class="sound-island">
+                    <div class="sound-container">                
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <audio id="song" hidden>
+                    <source src="../static/audio/music.wav" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                  </audio>
+                <div class="logos-island">
+                    <div class="logo-and-txt">
+                        <img src="./assets/icons/home.png" alt="Home" class="island-logo">
+                        <p class="logo-txt">Home</p>
+                    </div>
+                    <div class="logo-and-txt">
+                        <img src="./assets/icons/about.png" alt="About" class="island-logo">
+                        <p class="logo-txt">About</p>
+                    </div>
+                    <div class="logo-and-txt">
+                        <img src="./assets/icons/campus.png" alt="Ambassador" class="island-logo">
+                        <p class="logo-txt">Campuss Ambassdor</p>
+                    </div>
+                    <div class="logo-and-txt">
+                        <img src="./assets/icons/contact.png" alt="Contact" class="island-logo">
+                        <p class="logo-txt">Contact</p>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="sound-island" id="sound1">
+            </div>
             <nav class="topspot" id="top1" style="display:content;">
                 <a class="navigationButtons">
                     <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
@@ -283,10 +326,15 @@
                     <p>about</p>
                 </a>
                 <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/campus.png">
                     <p>campus</p>
                 </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/contact.png">
+                    <p>contact</p>
+                </a>
             </nav>
+            <div class="sound-island island-mobile" id="sound2" style="display:none;"></div>
             <nav class="topspot" id="top2" style="display: none;">
                 <a class="navigationButtons">
                     <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
@@ -297,17 +345,23 @@
                     <p>about</p>
                 </a>
                 <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/campus.png">
                     <p>campus Ambassador</p>
                 </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/contact.png">
+                    <p>contact</p>
+                </a>
             </nav>
-            
+            --->
         </header>
         
     </div>
     <div class="main toTop">
         
          <div class="firstViewer">
+            <div class="violet"></div>
+        <div class="purple"></div>
             <img src="./assets/dyuthi-const-logo.svg" class="headerImage">
             <div class="content desktopMargins" style="display: none;">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
@@ -315,7 +369,7 @@
             </div>
             
             <div class="content desktopMargins timertitle">
-                <h2>Coming Soon</h2>
+                <h2 class="comingsoontitle">Coming Soon</h2>
                 <div class="timer">
                     <div>   
                         <div class="ring">
@@ -351,8 +405,8 @@
                     <div >
                         <div class="ring">
                             <svg class="loop" height="100" width="100">
-                                <circle class="desktopcircle" id="d4"  stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
-                                <circle class="mobilecirlce"   id="m4"  stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="desktopcircle" id="d4"  stroke-dasharray="500,999" stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="mobilecirlce"   id="m4"  stroke-dasharray="500,999" stroke="#0050B7" stroke-width="5" fill="none" />
                               </svg>
                             <h2 id="secs" class="innertext">0</h2>
                             <p>Secs</p>
@@ -374,6 +428,9 @@
             <h1>Be a Campus Ambassador</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             <button class="button">Signup</button>
+         </div>
+         <div class="campusbackground">
+            
          </div>
          <div class="footer">
             <div class="footercontents">
