@@ -147,12 +147,12 @@ h1{
     position: absolute;
     width: 50vw;
     height: 100vh;
-    left: -427.76px;
-    top: 1821px;
-    border-radius: 1655px;
+    left: -227.76px;
+    top: 1621px;
+    border-radius: 60% 25%;
     background: linear-gradient(180deg, #893EFF 0%, #0BC2EF 100%), #8F1BD6;
     filter: blur(300px);
-    transform: matrix(-0.41, 0.81, 0.81, 0.31, 0, 0);
+    transform: matrix(-0.41, 0.91, 0.91, 0.41, 0, 0);
 
 }
 
@@ -198,11 +198,12 @@ h1{
     border-top:3px rgba(65, 156, 255, 1)  solid;
 }
 .footer h1{
-    font-weight:bold;
+    font-weight:700;
     color: #fff;
     margin-left: 45px;
 }
 .footer p{
+    color: grey;
     margin-left: 45px;
 }
 .timerloop{
@@ -332,6 +333,9 @@ h1{
     display: none;
 }
 @media(max-width:600px){
+    .violet{
+        transform: rotateX(-180deg);
+    }
     .desktopImage-header{
         display: none;
     }
