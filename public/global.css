@@ -1,6 +1,9 @@
 body{
     background-color: black;
+    background-image: url('./assets/BG_HEX.png');
+    background-repeat: repeat-y;
     color: aliceblue;
+    overflow-x: hidden;
 }
 @font-face{
     font-family: Target;
@@ -18,6 +21,29 @@ body{
     align-items: center;
     margin-block-end: 15px;
     
+    
+}
+.violet{
+    position: absolute;
+    width: 1238.39px;
+    height: 1381px;
+    left: 1361px;
+    top: 102px;
+
+    background: #8F1BD6;
+    filter: blur(472.347px);
+
+    
+}
+.blue{
+    position: absolute;
+    width: 1227.57px;
+    height: 1381px;
+    left: -493px;
+    top: -764px;
+
+    background: linear-gradient(180deg, #1045AE 0%, #0050B7 100%);
+    filter: blur(200px);
 }
 h1{
     font-family: Target;
@@ -43,4 +69,151 @@ h1{
 }
 .button:hover{
     background-color: black;
+}
+.about{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: 95px;
+    height: 100vh;
+    background-image: url('./assets/dark_blue.png');
+    background-repeat: no-repeat;
+    background-size: 100vw 130vh;
+    background-position-y:-160px;
+}
+.aboutcontent{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.aboutcontent h1{
+    font-family:TargetNormal;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: whitesmoke;
+}
+.aboutcontent p{
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    margin:10px;
+    padding: 7px;
+}
+.aboutimage{
+    height: 500px;
+    width:500px
+}
+.campusambassador{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 25px;
+}
+.campusambassador h1{
+    font-family: TargetNormal;
+    font-size:35px;
+    font-weight: 300;
+    color: whitesmoke;
+
+}
+.campusambassador p{
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #030A1D;
+    bottom: -50px;
+    border-radius: 15px;
+    border-color: 419CFF;
+    border-top:3px solid;
+}
+.footer h1{
+    margin-left: 45px;
+}
+.footer p{
+    margin-left: 45px;
+}
+.timerloop{
+    position:relative;
+    height: 100px;
+    width:100px;
+
+}
+
+.ring{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.innertext{
+    
+    margin-top:-80px;
+}
+.footercontents{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.footercontents p{
+    font-size: 19px;
+    color: ghostwhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.footerimage{
+    height: 55px;
+    margin-left: 35px;
+}
+@media(max-width:600px){
+    .about{
+        flex-direction: column;
+        background-image: none;
+        background: #030A1D;
+        box-shadow: 0px 0px 121.411px #030A1D, 0px 0px 69.3779px #030A1D, 0px 0px 40.4705px #030A1D, 0px 0px 20.2352px #030A1D, 0px 0px 5.7815px #030A1D, 0px 0px 2.89075px #030A1D;
+        box-sizing: 100vw;
+    }
+    .aboutcontent{
+        position: absolute;
+        margin:0px;
+        padding:0px;
+        z-index: 100;
+        text-align: center;
+        margin-left: -40px;
+    }
+    .aboutimage{
+        position: relative;
+        height:270px;
+        width: 270px;
+        left: 30px;
+        top: -70px;
+    }
+    .footer{
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 100vw;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .footerimage{
+        height: 25px;
+        margin-left: 15px;
+    }
+    .innertext{
+        margin-top: -60px;
+    }
 }

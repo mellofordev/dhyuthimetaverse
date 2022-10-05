@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
     <title>Dhyuthi 4.0</title>
     <link rel="stylesheet" href="global.css">
     <script src="pkgs/router.js"></script>
+    <script src="pkgs/timeCal.js" defer></script>
+    <script src="pkgs/dynamicisland.js" defer></script>
+    
     <style>
         body{
             
@@ -26,8 +29,8 @@
         }
         .headerImage{
             margin-top: 40px;
-            height: 150px;
-            width: 150px;
+            height: 350px;
+            width: 350px;
         }
         .firstViewer{
             display: flex;
@@ -54,12 +57,12 @@
         }
         @keyframes smoothspotback{
             from{
-                transfrom:scale(1.23);
+                transform:scale(1.23);
                 width: 50vw;
             }
             to{
                 transform: scale(0.95);
-                width: 200px;
+                width: 500px;
             }
         }
         .topspot{
@@ -72,7 +75,7 @@
             justify-content: center;
             align-items: center;
             height: 70px;
-            width: 200px;
+            width: 500px;
             animation-name: smoothspotback;
             animation-duration: 1s;
             animation-delay: 0ms;
@@ -90,7 +93,7 @@
         }
         .topview{
             background-image: url('./assets/grouped.png');
-            background-size: 80%;
+            background-size: 80% 150%;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
@@ -102,12 +105,57 @@
             margin-right: 145px;
         }
         .navigationButtons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
             margin: 5px;
+        }
+        .navigationButtons p{
+            margin:5px;
         }
         .desktopMargins{
             width: 40vw;
             margin:45px;
         }
+        .timertitle h2{
+            font-size:55px;
+            font-family: TargetNormal;
+            letter-spacing: 3px;
+        }
+        .timer{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 0px;
+        }
+        .timer h2{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 45px;
+
+        }
+        .timercontainer{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .timercontainer p{
+            font-size: 15px;
+        }
+        .desktopcircle{
+            cx:50;
+            cy:50;
+            r:40;
+            
+        }
+        .mobilecirlce{
+            display: none;
+        }
+        .loop{
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+
+            }
         @media (max-width:600px) {
             body{
                 background-size: 100%;
@@ -118,8 +166,8 @@
             }
             .headerImage{
                 margin-top:0px ;
-                height: 150px;
-                width: 150px;
+                height: 265px;
+                width: 265px;
 
             }
             .firstViewer{
@@ -129,7 +177,7 @@
             }
             .topview{
                 background-position-y:-3px;
-                background-size:100vw ;
+                background-size:100vw 80%;
             }
             @keyframes smoothspot-mobile{
                 from{
@@ -154,8 +202,8 @@
                 }
             }
             .topspot{
-                height: 30px;
-                width: 120px;
+                height: 50px;
+                width: 300px;
                 margin-bottom:55px;
                 animation-name: smoothspotback-mobile;
                 animation-duration: 5s;
@@ -172,11 +220,51 @@
             
             .toTop{
                 margin-top: -40px;
-            }  
+            } 
+            
+            .timer{
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 25px;
+                margin-left: -70px;
+                
+            } 
             .desktopMargins{
                 width: auto;
                 margin: 0px;
-            } 
+            }
+            
+            .timertitle h2{
+                font-size: 25px;
+            }
+            .desktopcircle{
+                display: none;
+            }
+            .mobilecirlce{
+            display: block;
+            cx:50;
+            cy:50;
+            r:30;
+            }
+            
+        }
+    </style>
+    <style>
+        ::-webkit-scrollbar {
+        width: 15px;
+        }
+        ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+       
+        }
+        ::-webkit-scrollbar-thumb {
+        background:#0050B7; 
+        border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background:#26359B; 
         }
     </style>
 </head>
@@ -184,25 +272,115 @@
     <div class="topview">
         
         <header class="header">
-            <nav class="topspot">
-                <a class="navigationButtons"><img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png"></a>
-                <a class="navigationButtons"><img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png"></a>
-                <a class="navigationButtons"><img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png"></a>
+            <nav class="topspot" id="top1" style="display:content;">
+                <a class="navigationButtons">
+                    <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
+                    <p>home</p>
+                </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png">
+                    <p>about</p>
+                </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png">
+                    <p>campus</p>
+                </a>
             </nav>
-           
+            <nav class="topspot" id="top2" style="display: none;">
+                <a class="navigationButtons">
+                    <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
+                    <p>home</p>
+                </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png">
+                    <p>about</p>
+                </a>
+                <a class="navigationButtons">
+                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/vr.png">
+                    <p>campus Ambassador</p>
+                </a>
+            </nav>
             
         </header>
         
     </div>
     <div class="main toTop">
+        
          <div class="firstViewer">
-            <img src="./assets/path13146.png" class="headerImage">
-            <div class="content desktopMargins">
+            <img src="./assets/dyuthi-const-logo.svg" class="headerImage">
+            <div class="content desktopMargins" style="display: none;">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
                 <button class="button" onclick="navigate('/controls')">immersive mode</button>
             </div>
+            
+            <div class="content desktopMargins timertitle">
+                <h2>Coming Soon</h2>
+                <div class="timer">
+                    <div>   
+                        <div class="ring">
+                            <svg class="loop" height="100" width="100">
+                                <circle class="desktopcircle" id="d1" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="mobilecirlce" id="m1" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none"  />
+                              </svg>
+                            <h2 id="days"class="innertext">0</h2>
+                            <p>Days</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <svg class="loop" height="100" width="100">
+                                <circle class="desktopcircle " id="d2" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="mobilecirlce " id="m2" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none"  />
+                              </svg>
+                            <h2 id="hours" class="innertext">0</h2>
+                            <p>Hours</p>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="ring">
+                            <svg class="loop" height="100" width="100">
+                                <circle class="desktopcircle" id="d3" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none"  />
+                                <circle class="mobilecirlce "  id="m3" stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none"  />
+                              </svg>
+                            <h2 id="mins" class="innertext">0</h2>
+                            <p>Mins</p>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="ring">
+                            <svg class="loop" height="100" width="100">
+                                <circle class="desktopcircle" id="d4"  stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="mobilecirlce"   id="m4"  stroke-dasharray="50,240" stroke="#0050B7" stroke-width="5" fill="none" />
+                              </svg>
+                            <h2 id="secs" class="innertext">0</h2>
+                            <p>Secs</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+         </div>
+         <div class="about">
+            
+            <div class="aboutcontent">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
+            </div>
+            <img src="./assets/Looper.png" class="aboutimage">
+         </div>
+         <div class="campusambassador">
+            <h1>Be a Campus Ambassador</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
+            <button class="button">Signup</button>
+         </div>
+         <div class="footer">
+            <div class="footercontents">
+                <h1>Dhyuthi 4.0</h1>
+                <img src="./assets/items.png" class="footerimage"/>
+                <p>Aniz +919497778170</p>
+            </div>
          </div>
     </div>
-    
 </body>
 </html>
