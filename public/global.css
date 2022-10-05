@@ -70,8 +70,8 @@ h1{
     
     height: 45px;
     width: 388.44px;;
-    border-radius: 22px;
-    background-color:black;
+    border-radius: 16.0731px;;
+    background-color:rgba(7, 12, 35, 1);
     color:white;
     text-align: center;
     font-size: 20px;
@@ -83,6 +83,10 @@ h1{
     backdrop-filter: blur(7.90624px);
     letter-spacing: 3px;
     margin-top: 16px;
+    box-sizing: border-box;
+    border-image:linear-gradient(180deg, #1045AE 0%, #0050B7 100%);
+    border-width: 3px;
+    border-style: solid;
 
 }
 .button:hover{
@@ -91,14 +95,14 @@ h1{
 .about{
     display: flex;
     flex-direction:row;
-    justify-content: space-between;
+    justify-content:space-evenly;
     margin-top: 95px;
     height: 100vh;
     background-image: url('./assets/dark_blue.png');
     background-repeat: no-repeat;
-    background-size: 100vw 130vh;
+    background-size: 100vw 150vh;
     background-position-y:-160px;
-   
+    width: 100vw;
 }
 .aboutcontent{
     display: flex;
@@ -107,11 +111,11 @@ h1{
 }
 .aboutcontent h1{
     font-family:TargetNormal;
-    font-size: 35px;
-    font-weight:bold;
+    font-size: 70px;
+    font-weight:700;
     letter-spacing: 3px;
     color: whitesmoke;
-    margin-left: 45px;
+    margin-left: 55px;
 }
 .aboutcontent p{
     font-size: 35px;
@@ -120,10 +124,12 @@ h1{
     color: whitesmoke;
     margin:45px;
     padding: 7px;
+    z-index: 300;
 }
 .aboutimage{
-    height: 500px;
-    width:500px
+    left: 47vw;
+    height:55vw;
+    width:autovw;
 }
 .campusambassador{
     display:flex;
@@ -133,24 +139,28 @@ h1{
     text-align: center;
     margin: 25px;
     z-index: 100;
+    height: 100vh;
+    position: relative;
     
 }
 .campusbackground{
     position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 100.24px;
-    top: 100px;
-
+    width: 50vw;
+    height: 100vh;
+    left: -427.76px;
+    top: 1821px;
+    border-radius: 1655px;
     background: linear-gradient(180deg, #893EFF 0%, #0BC2EF 100%), #8F1BD6;
     filter: blur(300px);
-    transform: matrix(-0.41, 0.91, 0.91, 0.41, 0, 0);
+    transform: matrix(-0.41, 0.81, 0.81, 0.31, 0, 0);
 
 }
+
 .campusambassador h1{
     font-family: TargetNormal;
-    font-size:35px;
-    font-weight: 300;
+    font-size:70px;
+    font-weight: 700;
+    line-height: 84px;
     color: whitesmoke;
 
 }
@@ -161,12 +171,26 @@ h1{
     color: whitesmoke;
 
 }
+.campustitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.campustitle-header{
+    z-index: 300;
+}
+.campus-icon{
+    height: 100px;
+    width: 100px;
+    margin-bottom:75px;
+}
 .footer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    height: 50vh;
+    height: 30vh;
     width: 100vw;
     background-color: #030A1D;
     bottom: -50px;
@@ -175,7 +199,7 @@ h1{
 }
 .footer h1{
     font-weight:bold;
-    color: whitesmoke;
+    color: #fff;
     margin-left: 45px;
 }
 .footer p{
@@ -195,7 +219,7 @@ h1{
     align-items: center;
 }
 .innertext{
-    
+    font-size:  10px;
     margin-top:-80px;
 }
 .footercontents{
@@ -284,12 +308,13 @@ h1{
     background: #8F1BD6;
     filter: blur(228px);
     height: 80vh;
-    width: 30vw;
+    width: 60vw;
     border-radius: 50%;
     position: absolute;
-    right: -90px;
-    bottom: -100px;
+    right: -290px;
+    bottom: -200px;
     opacity: 0.8;
+
 }
 .purple{
     background: linear-gradient(180deg, #1045AE 0%, #0050B7 100%);
@@ -300,8 +325,19 @@ h1{
     left: 0;
     top: 0;
 }
+.desktopImage-header{
+    display: block;
+}
+.mobileimage-header{
+    display: none;
+}
 @media(max-width:600px){
-    
+    .desktopImage-header{
+        display: none;
+    }
+    .mobileimage-header{
+        display: block;
+    }
     .dynamic-island{
         width: 30vw;
     }
@@ -321,9 +357,8 @@ h1{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: none;
-        height: 60vh;
-        margin-bottom:50px;
+        height: 100vh;
+        margin-top:-80px;
     }
     .aboutcontent{
         position: absolute;
@@ -333,20 +368,40 @@ h1{
         text-align: center;
         
     }
+    .aboutcontent h1{
+        margin-left: 0px;
+        text-align: center;
+    }
     .aboutcontent p{
-        text-align: left;
+        text-align: center;
         margin: 5px;
         font-size: 24px;
     }
     .aboutimage{
         position: relative;
-        height:270px;
-        width: 270px;
-        left: 30px;
+        height:470px;
+        width: 470px;
+        left: 150px;
         top: -70px;
     }
+    .campustitle{
+        justify-content: center;
+        align-items: center;
+    }
+    .campus-icon{
+        margin-left: -75px;
+        margin-top: -75px;
+    }
+    .campusambassador h1{
+        font-size: 50px;
+        text-align: center;
+    }
     .campusambassador p{
-        text-align: left;
+        text-align: center;
+    }
+    .campusbackground{
+        left: -40px;
+        top: 1721px;
     }
     .campusambassador button{
         width: 90vw;
@@ -354,6 +409,7 @@ h1{
     .footer{
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+        height: 30vh;;
         width: 100vw;
         padding-left: 0px;
         padding-right: 0px;

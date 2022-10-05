@@ -29,19 +29,28 @@
         }
         .headerImage{
             margin-top: 40px;
-            height: 350px;
-            width: 350px;
+            height: 594px;
+            width: 617px;
+            z-index: 300;
         }
         .firstViewer{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            margin-top:-200px;
+            height: 100vh;
+            position: relative;
+            
         }
         .content{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top:-150px;
+            z-index: 300;
+           
         }
         @keyframes smoothspot{
             from{
@@ -130,9 +139,10 @@
             margin-left: 0px;
         }
         .timer h2{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 45px;
-
+            
+            font-family: 'Iceberg';
+            font-size: 35px;
+          
         }
         .timercontainer{
             display:flex;
@@ -173,9 +183,14 @@
                
         }*/    
         .comingsoontitle{
-            font-size: 119px;
-            font-weight: 900;
+            font-size: 119.778px;;
+            font-weight: 700;
             font-family: TargetNormal;
+            color: linear-gradient(180deg, #FFFEFE 0%, rgba(184, 184, 184, 0.83) 227.64%);
+            letter-spacing: 0.01rem;
+
+            line-height: 115px;
+            background: transparent;
         }
         @media (max-width:600px) {
             body{
@@ -186,20 +201,22 @@
                 display: none;
             }
             .headerImage{
-                margin-top:0px ;
-                height: 265px;
-                width: 265px;
-
+                margin-top: -100px;
+                margin-bottom:70px ;
+                height: 365px;
+                width: 365px;
+                z-index: 300;
             }
             .firstViewer{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin-top: -100px;
+                height: 100vh;
             }
             .topview{
                 background-position-y:-3px;
-                background-size:100vw 85%;
+                background-size:100vw 55%;
                 margin: 0px;
                 padding: 0px;
             }
@@ -245,19 +262,19 @@
             }
             
             .toTop{
-                margin-top: -40px;
+                margin-top: -140px;
             } 
             .comingsoontitle{
-            font-size: 75px;
-            font-weight: 900;
-            font-family: TargetNormal;
-        }
+                font-size: 35px;
+                font-weight: 700;
+                font-family: TargetNormal;
+            
+            }
             .timer{
-                justify-content: space-between;
-                align-items: flex-start;
+                justify-content: stretch;
+                align-items: center;
                 width: 25px;
-                margin-left: -105px;
-                
+                margin-left: -100px;
             } 
             .desktopMargins{
                 width: auto;
@@ -362,14 +379,15 @@
         
          <div class="firstViewer">
             <div class="violet"></div>
-        <div class="purple"></div>
-            <img src="./assets/dyuthi-const-logo.svg" class="headerImage">
+            <div class="purple"></div>
+            <img src="./assets/dyuthi-const-logo.svg" class="headerImage mobileimage-header" >
+            <img src="./assets/dhyuthiwithdh.svg" class="headerImage desktopImage-header">
             <div class="content desktopMargins" style="display: none;">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
                 <button class="button" onclick="navigate('/controls')">immersive mode</button>
             </div>
             
-            <div class="content desktopMargins timertitle">
+            <div class="content">
                 <h2 class="comingsoontitle">Coming Soon</h2>
                 <div class="timer">
                     <div>   
@@ -420,19 +438,23 @@
          <div class="about">
             
             <div class="aboutcontent">
-                <h1>About</h1>
+                <h1 class="abouttitle">About</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             </div>
             <img src="./assets/Looper.png" class="aboutimage">
          </div>
          <div class="campusambassador">
-            <h1>Be a Campus Ambassador</h1>
+            <div class="campustitle">
+                <h1 class="campustitle-header">Be a Campus Ambassador</h1>
+                <img class="campus-icon" src="./assets/astrik.svg"  />
+            </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             <button class="button">Signup</button>
          </div>
-         <div class="campusbackground">
-            
+
+         <div class="campusbackground">  
          </div>
+         <div class="campusbackground2"></div>
          <div class="footer">
             <div class="footercontents">
                 <h1>Dhyuthi 4.0</h1>
