@@ -12,6 +12,9 @@
     <script src="pkgs/scrollToPosition.js" defer></script>
     <script src='pkgs/fontAwesome.js'defer ></script>
     <style>
+        html{
+            margin:0px;
+        }
         body{
             
             display: flex;
@@ -52,28 +55,6 @@
             margin-top:-150px;
             z-index: 300;
            
-        }
-        @keyframes smoothspot{
-            from{
-                transfrom:translateZ(0px) scale(0.95);
-                height: 70px;
-                width: 200px;
-            }
-            to{
-                transform: translateZ(-10px) scale(1);
-                height: 50px;
-                width: 50vw;
-            }
-        }
-        @keyframes smoothspotback{
-            from{
-                transform:scale(1.23);
-                width: 50vw;
-            }
-            to{
-                transform: scale(0.95);
-                width: 500px;
-            }
         }
         .topspot{
            
@@ -228,34 +209,13 @@
                 align-items: center;
                 margin-top: -100px;
                 height: 100vh;
+                margin-right: 0px;
             }
             .topview{
                 background-position-y:-3px;
                 background-size:100vw 55%;
                 margin: 0px;
                 padding: 0px;
-            }
-            @keyframes smoothspot-mobile{
-                from{
-                    transfrom:scale(0.95);
-                    
-                    width: 100px;
-                }
-                to{
-                    transform:  scale(1);
-                    height: 50px;
-                    width: 50vw;
-                }
-            }
-            @keyframes smoothspotback-mobile{
-                from{
-                    transfrom:scale(1.23);
-                    width: 120px;
-                }
-                to{
-                    transform: scale(1);
-                    width: 118px;
-                }
             }
             .topspot{
                 height: 50px;
@@ -320,7 +280,7 @@
     </style>
 </head>
 <body>
-    <div style="position: absolute;top: 0;width: 100vw;" id="home"></div>
+    <div style="position:absolute;top:0;" id="home"></div>
     <div class="topview">        
         <header class="header">
             <div class="dynamic-island">
@@ -431,7 +391,7 @@
          <div class="about">
             
             <div class="aboutcontent">
-                <h1 class="abouttitle">About</h1>
+                <h1 class="abouttitle">ABOUT</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             </div>
             <img src="./assets/Looper.png" class="aboutimage">
