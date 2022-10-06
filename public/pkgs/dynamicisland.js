@@ -1,17 +1,26 @@
 
 // Music Island 
 const music = document.querySelector('.sound-container').children;
-const child1 = music[0];
-const child2 = music[1];
-const child3 = music[2];
+const child1 = music[1];
+const child2 = music[2];
+const child3 = music[3];
+
 const maxHeight = 25;
 const minHeight = 15;
 var musicState = 'Off';
 var intervalId;
 var song = document.getElementById('song');
 //Play
+music[0].style.display="block";
+for(var i=1;i<=3;i++){
+    music[i].style.display="none";
+}
 function on(){
     song.play();
+    music[0].style.display="none";
+    for(var i=1;i<=3;i++){
+        music[i].style.display="block";
+    }
     function randomheights(){
         var randomInteger = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight;
         return randomInteger;
@@ -30,9 +39,13 @@ function off(){
     song.pause();
     musicState = 'Off';
     clearInterval(intervalId);
-    child1.style.height = minHeight + 'px';
-    child2.style.height = minHeight + 'px';
-    child3.style.height = minHeight + 'px';
+    for(var i=1;i<=3;i++){
+        music[i].style.display="none";
+    }
+    music[0].style.display="block";
+    //child1.style.height = minHeight + 'px';
+    //child2.style.height = minHeight + 'px';
+    //child3.style.height = minHeight + 'px';
 }
 
 
