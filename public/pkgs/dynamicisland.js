@@ -6,7 +6,7 @@ const child2 = music[1];
 const child3 = music[2];
 const maxHeight = 25;
 const minHeight = 15;
-var musicState = 'On';
+var musicState = 'Off';
 var intervalId;
 var song = document.getElementById('song');
 //Play
@@ -35,7 +35,6 @@ function off(){
     child3.style.height = minHeight + 'px';
 }
 
-on();
 
 //Switch States
 document.querySelector('.sound-container').addEventListener('click',function(){
