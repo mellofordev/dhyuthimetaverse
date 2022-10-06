@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
-    <title>Dhyuthi 4.0</title>
+    <title>Dhyuthi</title>
     <link rel="stylesheet" href="global.css">
     <script src="pkgs/router.js" defer></script>
     <script src="pkgs/timeCal.js" defer></script>
@@ -319,8 +319,8 @@
     </style>
 </head>
 <body>
-    <div class="topview">
-        
+    <div style="position: absolute;top: 0;width: 100vw;" id="home"></div>
+    <div class="topview">        
         <header class="header">
             <div class="dynamic-island">
                 <div class="sound-island">
@@ -336,22 +336,30 @@
                    
                   </audio>
                 <div class="logos-island">
-                    <div class="logo-and-txt">
-                        <img src="./assets/icons/home.svg" height="27" width="28" alt="Home" class="island-logo">
-                        <p class="logo-txt">Home</p>
-                    </div>
-                    <div class="logo-and-txt">
-                        <img src="./assets/icons/about.svg" height="27" width="27" alt="About" class="island-logo">
-                        <p class="logo-txt">About</p>
-                    </div>
-                    <div class="logo-and-txt">
-                        <img src="./assets/icons/campus.svg" height="27" width="27" alt="Ambassador" class="island-logo">
-                        <p class="logo-txt">Campuss Ambassdor</p>
-                    </div>
-                    <div class="logo-and-txt">
-                        <img src="./assets/icons/contact.svg" height="27" width="27" alt="Contact" class="island-logo">
-                        <p class="logo-txt">Contact</p>
-                    </div>
+                    <a onclick="goToHome()">
+                        <div class="logo-and-txt">
+                            <img src="./assets/icons/home.svg" height="27" width="28" alt="Home" class="island-logo">
+                            <p class="logo-txt">Home</p>
+                        </div>
+                    </a>
+                    <a onclick="goToAbout()">
+                        <div class="logo-and-txt">
+                            <img src="./assets/icons/about.svg" height="27" width="27" alt="About" class="island-logo">
+                            <p class="logo-txt">About</p>
+                        </div>
+                    </a>
+                    <a onclick="goToCA()">
+                        <div class="logo-and-txt">
+                            <img src="./assets/icons/campus.svg" height="27" width="27" alt="Ambassador" class="island-logo">
+                            <p class="logo-txt">Campuss Ambassdor</p>
+                        </div>
+                    </a>
+                    <a onclick="goToContact()">
+                        <div class="logo-and-txt">
+                            <img src="./assets/icons/contact.svg" height="27" width="27" alt="Contact" class="island-logo">
+                            <p class="logo-txt">Contact</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </header>
@@ -445,5 +453,6 @@
             </div>
          </div>
     </div>
+    <script src="pkgs/scrollToPosition.js"></script>
 </body>
 </html>
