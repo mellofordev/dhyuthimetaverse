@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
     <title>Dhyuthi 4.0</title>
     <link rel="stylesheet" href="global.css">
-    <script src="pkgs/router.js"></script>
+    <script src="pkgs/router.js" defer></script>
     <script src="pkgs/timeCal.js" defer></script>
     <script src="pkgs/dynamicisland.js" defer></script>
     
@@ -102,7 +102,7 @@
 
         }
         .topview{
-            background-image: url('./assets/grouped.png');
+            background-image: url('./assets/dhyuthigrp33.svg');
             background-size: 80% auto;
             background-position: center;
             background-repeat: no-repeat;
@@ -187,22 +187,7 @@
             
             animation: loopanimator 60s linear infinite forwards;
         }
-        
-        /*.sound-island{
-                display: flex;
-                justify-content: space-around;
-                align-self: start;
-                background: black;
-                border: 2px solid #8F1BD6;
-                box-shadow: 0px 0px 272.16px #8246AA, 0px 0px 155.52px #8246AA, 0px 0px 90.72px #8246AA, 0px 0px 45.36px #8246AA, 0px 0px 12.96px #8246AA, 0px 0px 6.48px #8246AA;
-                border-radius: 50%;
-                height: 70px;
-                width: 70px;
-                cursor: pointer;
-                margin-top:5px;
-                margin-right: 15px;
-               
-        }*/    
+   
         .comingsoontitle{
             font-size: 119.778px;;
             font-weight: 700;
@@ -334,68 +319,28 @@
                     </div>
                 </div>
                 <audio id="song" hidden loop autoplay>
-                    <source src="https://www.cultaway.in/audio/white-noise.mp3" type="audio/mp3">
+                    <source src="./assets/backgroundmusic.mp3" type="audio/mp3">
                    
                   </audio>
                 <div class="logos-island">
                     <div class="logo-and-txt">
-                        <img src="./assets/icons/home.png" alt="Home" class="island-logo">
+                        <img src="./assets/icons/home.svg" height="27" width="28" alt="Home" class="island-logo">
                         <p class="logo-txt">Home</p>
                     </div>
                     <div class="logo-and-txt">
-                        <img src="./assets/icons/about.png" alt="About" class="island-logo">
+                        <img src="./assets/icons/about.svg" height="27" width="27" alt="About" class="island-logo">
                         <p class="logo-txt">About</p>
                     </div>
                     <div class="logo-and-txt">
-                        <img src="./assets/icons/campus.png" alt="Ambassador" class="island-logo">
+                        <img src="./assets/icons/campus.svg" height="27" width="27" alt="Ambassador" class="island-logo">
                         <p class="logo-txt">Campuss Ambassdor</p>
                     </div>
                     <div class="logo-and-txt">
-                        <img src="./assets/icons/contact.png" alt="Contact" class="island-logo">
+                        <img src="./assets/icons/contact.svg" height="27" width="27" alt="Contact" class="island-logo">
                         <p class="logo-txt">Contact</p>
                     </div>
                 </div>
             </div>
-            <!--<div class="sound-island" id="sound1">
-            </div>
-            <nav class="topspot" id="top1" style="display:content;">
-                <a class="navigationButtons">
-                    <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
-                    <p>home</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png">
-                    <p>about</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/campus.png">
-                    <p>campus</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/contact.png">
-                    <p>contact</p>
-                </a>
-            </nav>
-            <div class="sound-island island-mobile" id="sound2" style="display:none;"></div>
-            <nav class="topspot" id="top2" style="display: none;">
-                <a class="navigationButtons">
-                    <img style="height: 20px; margin-top:  5px;" src="./assets/icons/home.png">
-                    <p>home</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top: 5px;" src="./assets/icons/about.png">
-                    <p>about</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/campus.png">
-                    <p>campus Ambassador</p>
-                </a>
-                <a class="navigationButtons">
-                    <img style="height: 20px;margin-top:5px;" src="./assets/icons/contact.png">
-                    <p>contact</p>
-                </a>
-            </nav>
-            --->
         </header>
         
     </div>
@@ -465,7 +410,7 @@
                 <h1 class="abouttitle">About</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             </div>
-            <img src="./assets/Looper.png" class="aboutimage">
+            <img src="./assets/Looper.svg" class="aboutimage">
          </div>
          <div class="campusambassador">
             <div class="campustitle">
@@ -482,7 +427,7 @@
          <div class="footer">
             <div class="footercontents">
                 <h1>Dhyuthi 4.0</h1>
-                <img src="./assets/items.png" class="footerimage"/>
+                <img src="./assets/items.svg" width="506" height="93" class="footerimage"/>
                 <p>Aniz +919497778170</p>
             </div>
          </div>
