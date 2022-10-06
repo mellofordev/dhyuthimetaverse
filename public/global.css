@@ -136,6 +136,7 @@ h1{
     z-index: 100;
     height: 100vh;
     position: relative;
+    overflow-x: hidden;
     
 }
 .campusbackground{
@@ -231,7 +232,7 @@ h1{
 }
 .footerimage{
     height: 55px;
-    margin-left: 35px;
+    margin-left: 15px;
 }
 .dynamic-island{
     display: flex;
@@ -329,7 +330,17 @@ h1{
 .mobileimage-header{
     display: none;
 }
+.footerflex{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 45px;
+}
 @media(max-width:600px){
+    body{
+        overflow-x: hidden;
+    }
     .violet{
         transform: rotateX(-180deg);
     }
@@ -415,7 +426,7 @@ h1{
         top: 1721px;
     }
     .campusambassador button{
-        width: 90vw;
+        width: 70vw;
     }
     .footer{
         border-bottom-left-radius: 0px;

@@ -9,7 +9,8 @@
     <script src="pkgs/router.js" defer></script>
     <script src="pkgs/timeCal.js" defer></script>
     <script src="pkgs/dynamicisland.js" defer></script>
-    
+    <script src="pkgs/scrollToPosition.js" defer></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' defer crossorigin='anonymous'></script>
     <style>
         body{
             
@@ -39,7 +40,7 @@
             justify-content: space-between;
             margin-top:-200px;
             height: 100vh;
-            position: relative;
+            
             
         }
         .content{
@@ -325,7 +326,8 @@
             <div class="dynamic-island">
                 <div class="sound-island">
                     <div class="sound-container">  
-                        <img src="./assets/icons/speakericon.jpg" class="speaker-island" style="display:none;"/>              
+                        <i class='fas fa-volume-mute' style='font-size:24px' class="speaker-island" style="display:none;"></i>
+                                  
                         <div></div>
                         <div></div>
                         <div></div>
@@ -336,29 +338,29 @@
                    
                   </audio>
                 <div class="logos-island">
-                    <a onclick="goToHome()">
-                        <div class="logo-and-txt">
+                    <a onclick="goToHome()" class="logo-and-txt">
+                        
                             <img src="./assets/icons/home.svg" height="27" width="28" alt="Home" class="island-logo">
                             <p class="logo-txt">Home</p>
-                        </div>
+                        
                     </a>
-                    <a onclick="goToAbout()">
-                        <div class="logo-and-txt">
+                    <a onclick="goToAbout()" class="logo-and-txt">
+                      
                             <img src="./assets/icons/about.svg" height="27" width="27" alt="About" class="island-logo">
                             <p class="logo-txt">About</p>
-                        </div>
+                     
                     </a>
-                    <a onclick="goToCA()">
-                        <div class="logo-and-txt">
+                    <a onclick="goToCA()" class="logo-and-txt">
+                       
                             <img src="./assets/icons/campus.svg" height="27" width="27" alt="Ambassador" class="island-logo">
                             <p class="logo-txt">Campuss Ambassdor</p>
-                        </div>
+                       
                     </a>
-                    <a onclick="goToContact()">
-                        <div class="logo-and-txt">
+                    <a onclick="goToContact()" class="logo-and-txt">
+                        
                             <img src="./assets/icons/contact.svg" height="27" width="27" alt="Contact" class="island-logo">
                             <p class="logo-txt">Contact</p>
-                        </div>
+                       
                     </a>
                 </div>
             </div>
@@ -370,8 +372,9 @@
          <div class="firstViewer">
             <div class="violet"></div>
             <div class="purple"></div>
-            <img src="./assets/dyuthi-const-logo.svg" class="headerImage" >
             
+            <img src="./assets/dyuthi-const-logo.svg" class="headerImage" >
+           
             <div class="content desktopMargins" style="display: none;">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
                 <button class="button" onclick="navigate('/controls')">immersive mode</button>
@@ -431,28 +434,38 @@
                 <h1 class="abouttitle">About</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
             </div>
-            <img src="./assets/Looper.svg" class="aboutimage">
+            <img src="./assets/Looper.png" class="aboutimage">
          </div>
-         <div class="campusambassador">
-            <div class="campustitle">
-                <h1 class="campustitle-header">Be a Campus Ambassador</h1>
-                <img class="campus-icon" src="./assets/astrik.svg"  />
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
-            <button class="button">Signup</button>
+         <div id="campus">
+            <div class="campusambassador">
+                <div class="campustitle">
+                    <h1 class="campustitle-header">Be a Campus Ambassador</h1>
+                    <img class="campus-icon" src="./assets/astrik.svg"  />
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.</p>
+                <button class="button">Signup</button>
+             </div>
+             
          </div>
 
-         <div class="campusbackground">  
-         </div>
-         <div class="campusbackground2"></div>
          <div class="footer">
             <div class="footercontents">
                 <h1>Dhyuthi 4.0</h1>
-                <img src="./assets/items.svg" width="506" height="93" class="footerimage"/>
+                <div class="footerflex">
+                    <a href="https://www.youtube.com/ieee">
+                        <img height="34" width="34" src="./assets/svgs/YoutubeLogo.svg"/>
+                    </a>
+                    <a href="https://www.instagram.com/ieee">
+                        <img height="34" width="34" src="./assets/svgs/InstagramLogo.svg"/>
+                    </a>
+                    <a href="https://www.twitter.com/ieee">
+                        <img height="34" width="34" src="./assets/svgs/TwitterLogo.svg"/>
+                    </a>
+                </div>
                 <p>Aniz +919497778170</p>
             </div>
          </div>
     </div>
-    <script src="pkgs/scrollToPosition.js"></script>
+    
 </body>
 </html>

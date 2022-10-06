@@ -13,7 +13,7 @@ const goToAbout = () => {
 
 
 //go to teams section code
-const campusambassador = document.querySelector(".campusambassador");
+const campusambassador = document.querySelector("#campus");
 const goToCA = () => {
     campusambassador.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
 };
