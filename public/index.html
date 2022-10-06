@@ -164,9 +164,30 @@
         }
         .loop{
             stroke-linecap: round;
-            transform: rotate(-90deg);
+            transform: rotate(-90deg) ;
+            
 
+
+        }
+        /* only for the second loop */
+        @keyframes loopanimator{
+            from{
+                stroke-dashoffset: 30px;
             }
+            to{
+                stroke-dashoffset: 240px;
+            }
+        }
+        .secondsvg{
+            transform: rotateY(-180deg) rotateZ(90deg);
+        }
+        .loopsecond{
+            stroke-dasharray: 240px;
+            stroke-linecap: round;
+            
+            animation: loopanimator 60s linear infinite forwards;
+        }
+        
         /*.sound-island{
                 display: flex;
                 justify-content: space-around;
@@ -282,8 +303,10 @@
                 margin: 0px;
             }
             
-            .timertitle h2{
-                font-size: 25px;
+            .timer h2{
+                font-size:30px;
+                text-align: center;
+
             }
             .desktopcircle{
                 display: none;
@@ -292,7 +315,7 @@
             display: block;
             cx:50;
             cy:50;
-            r:30;
+            r:40;
             }
             
         }
@@ -310,8 +333,8 @@
                         <div></div>
                     </div>
                 </div>
-                <audio id="song" hidden>
-                    <source src="./assets/backgroundlofi.wav" type="audio/ogg">
+                <audio id="song" hidden loop autoplay>
+                    <source src="https://www.cultaway.in/audio/white-noise.mp3" type="audio/mp3">
                    
                   </audio>
                 <div class="logos-island">
@@ -381,8 +404,8 @@
          <div class="firstViewer">
             <div class="violet"></div>
             <div class="purple"></div>
-            <img src="./assets/dyuthi-const-logo.svg" class="headerImage mobileimage-header" >
-            <img src="./assets/dhyuthiwithdh.svg" class="headerImage desktopImage-header">
+            <img src="./assets/dyuthi-const-logo.svg" class="headerImage" >
+            
             <div class="content desktopMargins" style="display: none;">
                 <h2 style="font-family:TargetNormal;letter-spacing:3px;">You can explore the site in metaverse  with immersive mode.</h2>
                 <button class="button" onclick="navigate('/controls')">immersive mode</button>
@@ -424,9 +447,9 @@
                     </div>
                     <div >
                         <div class="ring">
-                            <svg class="loop" height="100" width="100">
-                                <circle class="desktopcircle" id="d4"  stroke-dasharray="500,999" stroke="#0050B7" stroke-width="5" fill="none" />
-                                <circle class="mobilecirlce"   id="m4"  stroke-dasharray="500,999" stroke="#0050B7" stroke-width="5" fill="none" />
+                            <svg class="secondsvg" height="100" width="100">
+                                <circle class="desktopcircle loopsecond"  id="d4"   stroke="#0050B7" stroke-width="5" fill="none" />
+                                <circle class="mobilecirlce loopsecond"   id="m4"   stroke="#0050B7" stroke-width="5" fill="none" />
                               </svg>
                             <h2 id="secs" class="innertext">0</h2>
                             <p>Secs</p>

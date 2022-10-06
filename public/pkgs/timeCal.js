@@ -35,7 +35,7 @@ function timeCal(){
     get_m_circle2.setAttribute("stroke-dasharray",`${hourValue},240`);
     get_d_circle3.setAttribute("stroke-dasharray",`${minsValue},240`);
     get_m_circle3.setAttribute("stroke-dasharray",`${minsValue},240`);
-    get_d_circle4.setAttribute("stroke-dasharray",`${secsValue},240`);
-    get_m_circle4.setAttribute("stroke-dasharray",`${secsValue},240`);
+    //get_d_circle4.setAttribute("stroke-dasharray",`${secsValue},240`);
+    //get_m_circle4.setAttribute("stroke-dasharray",`${secsValue},240`);
 }
 setInterval(timeCal,1000)

@@ -61,7 +61,7 @@ const child1 = music[0];
 const child2 = music[1];
 const child3 = music[2];
 const maxHeight = 25;
-const minHeight = 13;
+const minHeight = 15;
 var musicState = 'On';
 var intervalId;
 var song = document.getElementById('song');
