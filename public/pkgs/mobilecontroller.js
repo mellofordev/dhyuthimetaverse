@@ -12,7 +12,7 @@ AFRAME.registerComponent('mobilecontroller',{
         var downkey=document.getElementById("down");
         var leftkey =document.getElementById("left");
         var rightkey=document.getElementById("right");
-    
+        console.log(get_camera.object3D);
         upkey.addEventListener('touchstart',()=>{
          var position_ =get_camera.getAttribute("position");
          

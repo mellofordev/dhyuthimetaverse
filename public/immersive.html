@@ -14,9 +14,11 @@ Metaverse by sct,trivandrum
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <script src="./pkgs/twowaymotion.js"></script>
+    <script src="./pkgs/twowaymotion.js" defer></script>
     <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/tilt-turn/tilt-turn.js" ></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
     <script src="./pkgs/materialtheme.js"></script>
+    <script src="./pkgs/boundry.js"></script>
     
     <style>
       .a-enter-vr-button{
@@ -71,6 +73,42 @@ Metaverse by sct,trivandrum
           <audio id="lofi" src="./assets/backgroundlofi.wav"></audio>
           <a-asset-item  id="threeFont" src="./assets/custom.jsonasset"></a-asset-item>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a-asset-item id="pin" src="./assets/models/scene.gltf"></a-asset-item>
+          <!--events-->
+          <img id="kazetachinu" src="./assets/events/dhyuthi_img.jpg" crossorigin="anonymous"/>
+          <img id="kazetachinuPoster" src="./assets/events/dhyuthi_img.jpg" crossorigin="anonymous"/>
+        <!--
+          Image source: http://www.ghibli.jp/works/ponyo/#frame&gid=1&pid=36
+          Image author: Studio Ghibli
+        -->
+        <img id="ponyo" src="./assets/events/poster_dh.jpg" crossorigin="anonymous"/>
+        <img id="ponyoPoster" src="./assets/events/poster_dh.jpg" crossorigin="anonymous"/>
+        <!--
+          Image source: http://www.ghibli.jp/works/karigurashi/#frame&gid=1&pid=32
+          Image author: Studio Ghibli
+        -->
+        <img id="karigurashi" src="./assets/events/call_for_ambassodors.jpg" crossorigin="anonymous"/>
+        <img id="karigurashiPoster" src="./assets/events/call_for_ambassodors.jpg" crossorigin="anonymous"/>
+        <a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+         ></a-mixin>
+         <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          material="shader: flat"
+          position="0 0 0.005"
+         ></a-mixin>
+         <a-mixin
+          id="movieImage"
+          geometry="primitive: plane; width: 1.5; height: 0.81"
+          material="src: #ponyo; shader: flat; transparent: true"
+          position="0 0.495 0.002"
+         ></a-mixin>
         </a-assets>
         <a-entity id="environment"  environment="preset:japan;dressing:torii;ligthing:distant;skyType:atmosphere;ground:spikes;"></a-entity>
         <a-entity
@@ -79,8 +117,10 @@ Metaverse by sct,trivandrum
         position="13 1.2 -12.62839"
         scale="34.5 34.5 24.5"
       ></a-entity>
+      <a-entity gltf-model="url(/assets/models/scene.gltf)" position="13 1.2 -12.62839"></a-entity>
       <a-entity position="13 1.2 -12.62839">
-        <a-rounded color="white">
+        <a-rounded color="white" position="-13.516 -1.185 4.842" rotation="-90.000 0.000 0.000">
+          
           <a-button height="5" width="5" name="lofi" position="13 1.2 -12.62839" value="music" ></a-button>
         </a-rounded>
       </a-entity>
@@ -100,16 +140,58 @@ Metaverse by sct,trivandrum
         View more button with text need to add scripts for poping up !
       -->
       <a-entity id="viewMore" position="2.284 1.960 -2.762" rotation="0 -93.680 0" >
-        <a-rounded position="0.108 -0.276 -1.192" rotation="0 37.00 0" width="6" height="4" scale="0.3 0.3 0.3">
-          <a-entity  text="value: Dhyuthi is the annual technical fest organised by IEEE.This year virtual reality is the concept and this is a random test sentences to see how it looks on the screen and the mobile developed by IEEE SCT SB INTERNS TEAM; height:15;shader:msdf;font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/orbitron/Orbitron-Bold.json;" scale="5.040 12.570 100.280">
+        <a-rounded position="0.108 -0.276 -1.192" rotation="0 37.00 0" width="6" height="10" scale="0.3 0.3 0.3">
+          <a-entity  text="value:The Flagship event of IEEE SCT SB, is back with a bang after a two year hiatus. Whilst the post covid era continues to dampen everyone, Dhyuthi 4.0 promises to offer a fun filled, thrilling and exhilarating 3 days filled with lively workshops, interactions and much more to be seen. With participants from colleges in the length and breadth of Kerala, Dhyuthi 4.0 is geared up to be a one of a kind festive experience.
+          While the primary objective of Dhyuthi is to provide a rostrum for students from different colleges to expand their social circle, engage in fun conversations, debate and discuss prospects etc, Dhyuthi 4.0 promises much much more. No wonder perhaps, it still remains one of the most anticipated events of our SB!; height:15;shader:msdf;font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/orbitron/Orbitron-Bold.json;" scale="5.040 12.570 100.280">
 
           </a-entity>
         </a-rounded>
         
       </a-entity>
-      <!--Camera cursor-->  
+      <!--events-->
+      <a-entity id="ui" position="5.955 1.200 -10.480" rotation="0.000 -37.00 0.00">
+        <!-- Poster menu -->
+        <a-entity id="menu">
+          <a-entity id="karigurashiButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button">          
+            <a-entity material="src: #karigurashiPoster;" mixin="poster"></a-entity>
+          
+          </a-entity>
 
-      <a-entity id="cam" camera="" wasd-controls mouse-controls mobilecontroller twoway-motion="nonMobileLoad: true; chatty: false;speed:7;threshold:-20;" position="0 1.6 0" wasd-controls="" look-controls="" rotation="" scale="" visible="" >
+          <a-entity id="kazetachinuButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #kazetachinuPoster" mixin="poster"></a-entity>
+          </a-entity>
+
+          <a-entity id="ponyoButton" position="0.8 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
+          </a-entity>
+        </a-entity>
+        <a-gui-button
+        width="0.2" 
+        height="0.3" 
+        base-depth="0.025" 
+        depth="0.1"
+        gap="0.1"
+        onclick="showpopup('call for ambassodors')" key-code="32"
+        value="Sample Button"
+        font-family="assets/Inter-Light.ttf"	
+        font-size="0.25"
+        margin="0 0 0.05 0"
+        position="-1.017 0.016 -0.803"
+        rotation="0.00 -37.00 0.00"
+        font-color="black"
+        active-color="red"
+        hover-color="yellow"
+        border-color="transparent"
+        focus-color="black"
+        background-color="orange"
+    
+        bevel="true"
+      >
+      </a-gui-button>
+      </a-entity>
+      <!--Camera cursor-->  
+      <a-entity>
+      <a-entity id="cam"  camera="" wasd-controls mouse-controls mobilecontroller twoway-motion="nonMobileLoad: true; chatty: false;speed:7;threshold:-20;"  position="0 1.6 0" wasd-controls="" look-controls="" rotation="" scale="" visible="" >
             <!--<a-cursor scale="2 2 2" color="white" opacity="0.3" position="" rotation="" visible="" material="" raycaster="objects:[gui-interactable]" cursor="fuse" geometry="ring">
             </a-cursor>--->
             <a-gui-cursor id="cursor" raycaster="objects:[gui-interactable]"  fuse="true" fuse-timeout="1000" design="ring" 
@@ -123,7 +205,7 @@ Metaverse by sct,trivandrum
             gui-cursor scale
              ></a-gui-cursor>
       </a-entity>
-
+      </a-entity>
     
       <a-troika-text
         value="IEEE"
@@ -148,8 +230,8 @@ Metaverse by sct,trivandrum
         Ieee
       </button>
       <script>
-        function showpopup(){
-          alert("pressed");
+        function showpopup(props){
+          alert(props);
         }
       </script>
 </body>

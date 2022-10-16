@@ -9,6 +9,7 @@ AFRAME.registerComponent('boundry-set',{
     },
     init:function(){
         var get_environment =document.getElementById("environment").object3D;
-        console.log(get_environment);
+        var get_camera= document.getElementById("cam").object3D;
+        console.log(get_camera);
     }
 })
