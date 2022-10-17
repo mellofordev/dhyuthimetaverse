@@ -3,7 +3,9 @@
 <!---
 Metaverse by sct,trivandrum
 2022
+
 -->  
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +35,19 @@ Metaverse by sct,trivandrum
       .controllers{
         display: none;
 
+      }
+      .live-users{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .playmusic{
+        position: absolute;
+        top:20px;
+        left:20px;
       }
       @media(max-width:600px){
         .controllers{
@@ -70,31 +85,17 @@ Metaverse by sct,trivandrum
           <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
           <img id="images" src="./assets/path13146.png"   crossorigin="anonymous">
           <img id="dhyuthirobo" src="./assets/dhrobo.png" crossorigin="anonymous"> 
-          <audio id="lofi" src="./assets/backgroundlofi.wav"></audio>
-          <a-asset-item  id="threeFont" src="./assets/custom.jsonasset"></a-asset-item>
+
+          <!--this cdn is for the icons on controller-->
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <a-asset-item id="pin" src="./assets/models/scene.gltf"></a-asset-item>
           <!--events-->
-          <img id="kazetachinu" src="./assets/events/dhyuthi_img.jpg" crossorigin="anonymous"/>
           <img id="kazetachinuPoster" src="./assets/events/dhyuthi_img.jpg" crossorigin="anonymous"/>
-        <!--
-          Image source: http://www.ghibli.jp/works/ponyo/#frame&gid=1&pid=36
-          Image author: Studio Ghibli
-        -->
-        <img id="ponyo" src="./assets/events/poster_dh.jpg" crossorigin="anonymous"/>
-        <img id="ponyoPoster" src="./assets/events/poster_dh.jpg" crossorigin="anonymous"/>
-        <!--
-          Image source: http://www.ghibli.jp/works/karigurashi/#frame&gid=1&pid=32
-          Image author: Studio Ghibli
-        -->
-        <img id="karigurashi" src="./assets/events/call_for_ambassodors.jpg" crossorigin="anonymous"/>
-        <img id="karigurashiPoster" src="./assets/events/call_for_ambassodors.jpg" crossorigin="anonymous"/>
+          <img id="ponyoPoster" src="./assets/events/poster_dh.jpg" crossorigin="anonymous"/>
+          <img id="karigurashiPoster" src="./assets/events/call_for_ambassodors.jpg" crossorigin="anonymous"/>
         <a-mixin
           id="frame"
           geometry="primitive: plane; width: 0.5783552; height: 0.8192"
           material="color: white; shader: flat"
-          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
          ></a-mixin>
          <a-mixin
           id="poster"
@@ -117,13 +118,6 @@ Metaverse by sct,trivandrum
         position="13 1.2 -12.62839"
         scale="34.5 34.5 24.5"
       ></a-entity>
-      <a-entity gltf-model="url(/assets/models/scene.gltf)" position="13 1.2 -12.62839"></a-entity>
-      <a-entity position="13 1.2 -12.62839">
-        <a-rounded color="white" position="-13.516 -1.185 4.842" rotation="-90.000 0.000 0.000">
-          
-          <a-button height="5" width="5" name="lofi" position="13 1.2 -12.62839" value="music" ></a-button>
-        </a-rounded>
-      </a-entity>
       <a-entity text="value: Move around to navigate" position="1 0.2 -12.62839" scale="7.5 7.5 15.5"></a-entity>
       
       <a-entity position="-6.54753 1.35536 2.762"  rotation="0 100 0">
@@ -165,29 +159,6 @@ Metaverse by sct,trivandrum
             <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
           </a-entity>
         </a-entity>
-        <a-gui-button
-        width="0.2" 
-        height="0.3" 
-        base-depth="0.025" 
-        depth="0.1"
-        gap="0.1"
-        onclick="showpopup('call for ambassodors')" key-code="32"
-        value="Sample Button"
-        font-family="assets/Inter-Light.ttf"	
-        font-size="0.25"
-        margin="0 0 0.05 0"
-        position="-1.017 0.016 -0.803"
-        rotation="0.00 -37.00 0.00"
-        font-color="black"
-        active-color="red"
-        hover-color="yellow"
-        border-color="transparent"
-        focus-color="black"
-        background-color="orange"
-    
-        bevel="true"
-      >
-      </a-gui-button>
       </a-entity>
       <!--Camera cursor-->  
       <a-entity>
@@ -206,14 +177,16 @@ Metaverse by sct,trivandrum
              ></a-gui-cursor>
       </a-entity>
       </a-entity>
-    
-      <a-troika-text
-        value="IEEE"
-        material="shader: standard; metalness: 0.8;"
-        ></a-troika-text>
         <a-sky color="#ECECEC"></a-sky>
         
       </a-scene>
+      <!--
+      <div class="live-users">
+        <p style="color:white">Live people:</p>
+        <button style="background-color:transparent;height:22px;margin-left:3px;margin-top:15px;border-color:tomato;color:white" id="live">0</button>
+      </div>
+      -->
+
       <div class="controllers" aframe-injected >
         <div class="eachControllers">
           <button id="up" class="controlButton"  aframe-injected ><i class="fa fa-angle-up" style="font-size: 25px;"></i></button>
@@ -226,14 +199,23 @@ Metaverse by sct,trivandrum
           <button id="down" class="controlButton" aframe-injected ><i class="fa fa-angle-down" style="font-size: 25px;"></i></button>
         </div>
       </div>
-      <button>
-        Ieee
-      </button>
+      <!---
+      as of now webrtc is not supported in vercel so i plan to redirect the whole page 
+      <script src="/socket.io/socket.io.js"></script>
       <script>
+        var socket = io();
+        var live_=document.getElementById("live");
+        socket.emit('newconnection');
+        socket.on("usercount",(counter)=>{
+          console.log(counter);
+          live_.innerText=counter;
+        })
         function showpopup(props){
           alert(props);
         }
       </script>
+      -->
+
 </body>
 
 </html>
