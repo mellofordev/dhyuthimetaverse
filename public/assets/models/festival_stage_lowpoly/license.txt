@@ -1,0 +1,11 @@
+Model Information:
+* title:	Festival Stage [LowPoly]
+* source:	https://sketchfab.com/3d-models/festival-stage-lowpoly-080542b9b54c4f3aa6c389dab6b00b3e
+* author:	Mareon (https://sketchfab.com/mareoncz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Festival Stage [LowPoly]" (https://sketchfab.com/3d-models/festival-stage-lowpoly-080542b9b54c4f3aa6c389dab6b00b3e) by Mareon (https://sketchfab.com/mareoncz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
